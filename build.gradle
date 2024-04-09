@@ -23,9 +23,9 @@ repositories {
 }
 
 dependencies {
-	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
-	implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
-	implementation 'org.springframework.boot:spring-boot-starter-web'
+	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'	//db 하이버네이트용
+	implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'	//타임리프 프론트용
+	implementation 'org.springframework.boot:spring-boot-starter-web'	//mvc
 
 	compileOnly 'org.projectlombok:lombok'
 	annotationProcessor 'org.projectlombok:lombok'
@@ -33,10 +33,13 @@ dependencies {
 	testCompileOnly 'org.projectlombok:lombok'
 	testAnnotationProcessor	'org.projectlombok:lombok'
 
-	developmentOnly 'org.springframework.boot:spring-boot-devtools'
-	runtimeOnly 'org.mariadb.jdbc:mariadb-java-client'
-	providedRuntime 'org.springframework.boot:spring-boot-starter-tomcat'
-	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	developmentOnly 'org.springframework.boot:spring-boot-devtools'	//boot 용 개발 환경
+	runtimeOnly 'org.mariadb.jdbc:mariadb-java-client'	//db용 드라이버
+	providedRuntime 'org.springframework.boot:spring-boot-starter-tomcat'	//톰켓
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'	//테스트 환경 구축
+
+	//날짜관련
+	implementation group: 'org.thymeleaf.extras', name: 'thymeleaf-extras-java8time', version: '3.0.4.RELEASE'
 }
 
 tasks.named('bootBuildImage') {
